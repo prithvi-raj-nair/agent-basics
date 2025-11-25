@@ -2,3 +2,5 @@
 venv/
 
 
+.mcp.json
+.claude/
