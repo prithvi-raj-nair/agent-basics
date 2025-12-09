@@ -83,9 +83,9 @@ def encode_image_b64(path: str) -> tuple[str, str]:
 import base64
 from IPython.display import HTML, display
 import pandas as pd
-from typing import Any
+from typing import Any, Optional
 
-def print_html(content: Any, title: str | None = None, is_image: bool = False):
+def print_html(content: Any, title: Optional[str] = None, is_image: bool = False):
     """
     Pretty-print inside a styled card.
     - If is_image=True and content is a string: treat as image path/URL and render <img>.
