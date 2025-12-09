@@ -16,7 +16,9 @@ from anthropic import Anthropic
 from html import escape
 
 # === Env & Clients ===
-load_dotenv()
+# Load from .env.local in the project root (agent-basics directory)
+env_local_path = Path(__file__).resolve().parents[3] / ".env.local"
+load_dotenv(env_local_path)
 openai_api_key = os.getenv("OPENAI_API_KEY")
 anthropic_api_key = os.getenv("ANTHROPIC_API_KEY")
 

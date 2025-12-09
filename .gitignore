@@ -1,6 +1,7 @@
 .DS_store
 venv/
 
+.env.local
 
 .mcp.json
 .claude/
