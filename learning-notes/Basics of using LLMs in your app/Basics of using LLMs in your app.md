@@ -195,12 +195,8 @@ Model providers do not expose the actual chain of thought of the model due to va
 - ✅ Include full history for context (API is stateless)
 - ❌ Don't alternate roles incorrectly (most APIs auto-merge consecutive same-role messages)
 
-<aside>
-⚠️
-
-System prompt is handled differently in Anthropic and ChatGPT. Anthropic has a separate field for the system message, whereas ChatGPT takes it as the first message in the list with the role system. 
-
-</aside>
+> [!WARNING]
+> System prompt is handled differently in Anthropic and ChatGPT. Anthropic has a separate field for the system message, whereas ChatGPT takes it as the first message in the list with the role system.
 
 ---
 

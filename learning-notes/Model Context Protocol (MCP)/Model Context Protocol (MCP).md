@@ -59,12 +59,9 @@
     - A “doc name” to fetch from a set of documents
 - This is useful when the full list of resources might be long (like list of file names in a code base)
 
-<aside>
-💡
-
-- Effectively resources are the same as a GET API requests.
-- Resources are not “actions” so fetching of a resource as a tool call “Get resource X” is token inefficient (although functionally it is equivalent)
-</aside>
+> [!TIP]
+> - Effectively resources are the same as a GET API requests.
+> - Resources are not "actions" so fetching of a resource as a tool call "Get resource X" is token inefficient (although functionally it is equivalent)
 
 ### How resources are used
 
@@ -127,13 +124,10 @@ There are some nuances in how the MCP client and server communicate with each ot
     - Companies developing OS for phones know that all wifi chips implement network layer protocol so they write code to handle that and implement the interface for the next higher layer (application layer)
     - Application developers for the OS can then implement applications based on the application layer protocols without worrying about the lower levels of the stack
 
-<aside>
-💡
-
-**Takeaway: Protocols are stacked in layers for separation of concerns (abstraction)**
-
-- Application developer doesn’t have to think about whether the device is connected via ethernet or wifi
-</aside>
+> [!TIP]
+> **Takeaway: Protocols are stacked in layers for separation of concerns (abstraction)**
+>
+> - Application developer doesn't have to think about whether the device is connected via ethernet or wifi
 
 ### JSON-RPC protocol
 
@@ -144,15 +138,12 @@ There are some nuances in how the MCP client and server communicate with each ot
 - Similarly RPC (Remote procedure calls) is a different way to structure your APIs
 - JSON-RPC is specific protocol that covers both the RPC paradigm for structuring APIs and the way to structure the information using JSON for the remote procedure calls
 
-<aside>
-💡
-
-**Takeaway: Functionally both JSON-RPC and REST APIs are equivalent. It’s just a way for two entities to talk to each other in a standard way.**
-
-- What can be done with one can be done with the other
-- The only difference is in how some systems/functionality might be easier to understand or develop with one approach vs the other
-- So no need to think more about the nuances and differences.
-</aside>
+> [!TIP]
+> **Takeaway: Functionally both JSON-RPC and REST APIs are equivalent. It's just a way for two entities to talk to each other in a standard way.**
+>
+> - What can be done with one can be done with the other
+> - The only difference is in how some systems/functionality might be easier to understand or develop with one approach vs the other
+> - So no need to think more about the nuances and differences.
 
 ### STDIO streams
 
@@ -182,13 +173,10 @@ That last one creates this:
 └───────────┘                 └───────────┘                 └──────────┘
 ```
 
-<aside>
-💡
-
-**Takeaway: STDIO is just a way for programs running on a computer to talk to each other**
-
-- It’s a channel of data exchange just like server and client are just programs communicating over the internet as the channel
-</aside>
+> [!TIP]
+> **Takeaway: STDIO is just a way for programs running on a computer to talk to each other**
+>
+> - It's a channel of data exchange just like server and client are just programs communicating over the internet as the channel
 
 ### Package managers and executors
 
@@ -203,13 +191,10 @@ That last one creates this:
 - So these commands are just running a program on your computer and they are integrated with the package manager to download the required program and any dependancies first
 - These package managers also cleverly isolate the environment for downloading packages so that different programs on the computer can use different versions of packages without conflicts
 
-<aside>
-💡
-
-**Takeaway: Package manager and executors are just a way to download and run programs that are uploaded by others to the package library**
-
-- Its equivalent to downloading google chrome and running it on your computer except its down using the terminal CLI
-</aside>
+> [!TIP]
+> **Takeaway: Package manager and executors are just a way to download and run programs that are uploaded by others to the package library**
+>
+> - Its equivalent to downloading google chrome and running it on your computer except its down using the terminal CLI
 
 ## MCP protocol as a stack
 
@@ -235,12 +220,8 @@ That last one creates this:
     - HTTP for remote servers that are not running on your own local system
     - STDIO for servers that are running on your own local system
 
-<aside>
-💡
-
-This might be confusing how a server is running on your local system since we are used to servers always being in the cloud (remote). This will be explained in subsequent sections.
-
-</aside>
+> [!NOTE]
+> This might be confusing how a server is running on your local system since we are used to servers always being in the cloud (remote). This will be explained in subsequent sections.
 
 ## Creating an MCP server
 

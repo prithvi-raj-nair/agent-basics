@@ -52,12 +52,8 @@
     - extracting entities (dates, product names, IDs, email subject and body etc)
     - formatting intermediate outputs for multi-step LLM workflows
 
-<aside>
-⚠️
-
-These limitations can cause problems in custom structures and tool calling. So at the orchestration layer you have to add checks to handle these issues.
-
-</aside>
+> [!WARNING]
+> These limitations can cause problems in custom structures and tool calling. So at the orchestration layer you have to add checks to handle these issues.
 
 ## Tool calling limitations
 
