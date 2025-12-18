@@ -1,6 +1,24 @@
 # Basics of using LLMs in your app
 
-🌐
+## Page Outline
+
+- [Understanding the LLM API](#understanding-the-llm-api)
+  - [Summary](#summary)
+    - [Input and output of LLM APIs](#input-and-output-of-llm-apis)
+    - [Orchestration layer](#orchestration-layer)
+    - [Tool calling and structured input/output](#tool-calling-and-structured-inputoutput)
+    - [Stateless and non-deterministic](#stateless-and-non-deterministic)
+    - [No access to chain of thought](#no-access-to-chain-of-thought)
+- [API Request General Structure](#api-request-general-structure)
+- [API Response General Structure](#api-response-general-structure)
+  - [API Response Fields Descriptions](#api-response-fields-descriptions)
+  - [Tool Call Response Example](#tool-call-response-example)
+  - [Streaming Response Example](#streaming-response-example)
+- [Quick Reference Table for API inputs and outputs](#quick-reference-table-for-api-inputs-and-outputs)
+- [Tool calling and structured input/output](#tool-calling-and-structured-inputoutput-1)
+- [Simulating chain of thought without access](#simulating-chain-of-thought-without-access)
+
+---
 
 # Understanding the LLM API
 
@@ -119,7 +137,7 @@ Model providers do not expose the actual chain of thought of the model due to va
 
 ---
 
-## **Request Fields Descriptions**
+## **API Request Fields Descriptions**
 
 ### **1. `model`**
 
@@ -399,8 +417,6 @@ System prompt is handled differently in Anthropic and ChatGPT. Anthropic has a s
 
 # **API Response General Structure**
 
-### **Complete Sample Response (Non-Streaming)**
-
 ```json
 {
   "id": "chatcmpl-8pP9mKR7K3f9H8sCx2n9Vx",
@@ -426,12 +442,11 @@ System prompt is handled differently in Anthropic and ChatGPT. Anthropic has a s
   },
   "system_fingerprint": "fp_44709d6fcb"
 }
-
 ```
 
 ---
 
-## **Response Fields - Detailed Reference**
+## **API Response Fields Descriptions**
 
 ### **1. id**
 
@@ -643,9 +658,9 @@ data: [DONE]
 
 ---
 
-## **Quick Reference Table**
+# **Quick Reference Table for API inputs and outputs**
 
-### **Essential Request Fields**
+### **Request key Fields**
 
 | Field | Required | Default | Use When |
 | --- | --- | --- | --- |
