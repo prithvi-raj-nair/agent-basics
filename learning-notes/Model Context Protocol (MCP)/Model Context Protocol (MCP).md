@@ -23,7 +23,7 @@
 
 # Motivation
 
-- Now that you understand how LLMs call tools ([Tool calling - Deep dive](https://www.notion.so/Tool-calling-Deep-dive-2c56fe198dfe8084bb9fea23ff698b08?pvs=21)), it is only natural to think that LLMs given access to different tools can perform various operations which are actually useful to users
+- Now that you understand how LLMs call tools ([Tool calling - Deep dive](../Tool%20calling%20-%20Deep%20dive/Tool%20calling%20-%20Deep%20dive.md)), it is only natural to think that LLMs given access to different tools can perform various operations which are actually useful to users
 - To facilitate this, LLM service providers would have to integrate “tools” for many apps like google drive, gmail, github etc
 - It is not feasible for the apps or the LLM providers to make custom integrations (N apps, M providers = N x M integrations)
 - To standardise this process of providing app specific tools to LLMs, the model context protocol was developed
@@ -37,12 +37,12 @@
 ## Host, client, and server
 
 - At a high level the images above provide a pretty good mental model to think about the entities involved in the protocol
-- If you are actually building MCP servers or clients, reading the section [MCP at a more technical level (for builders)](https://www.notion.so/MCP-at-a-more-technical-level-for-builders-2c66fe198dfe8039b90bfb0c1254bf22?pvs=21) will give a much better mental model since there are a lot of nuances
+- If you are actually building MCP servers or clients, reading the section [MCP at a more technical level (for builders)](#mcp-at-a-more-technical-level-for-builders) will give a much better mental model since there are a lot of nuances
 - For example - MCP “servers” doesn’t necessarily mean a server that is located in the cloud as we are used to traditionally when we talk about servers.
 
 ## Tools
 
-- Tools work pretty much the same way as described in [Tool calling - Deep dive](https://www.notion.so/Tool-calling-Deep-dive-2c56fe198dfe8084bb9fea23ff698b08?pvs=21)
+- Tools work pretty much the same way as described in [Tool calling - Deep dive](../Tool%20calling%20-%20Deep%20dive/Tool%20calling%20-%20Deep%20dive.md)
 - MCP just provides a layer to standardise how application developers create tools that can connect with any LLM host app
 
 ## Resources
@@ -259,7 +259,7 @@ That last one creates this:
 - What that means is that your computer is acting as a server except it is not publicly connected so only other applications on your device can access it
 - In this case other application might be Cursor or Claude Code running on your machine
 - The configuration you see below looks like a remote server but the IP address refers to `localhost` (your own system)
-- The reason Figma does this because it is a GUI application which is opened by the user and not created as a subprocess of the Client application (this will make sense in the subsequent section [Connecting server and client](https://www.notion.so/Connecting-server-and-client-2c66fe198dfe80b0865fd9d9289c439d?pvs=21) )
+- The reason Figma does this because it is a GUI application which is opened by the user and not created as a subprocess of the Client application (this will make sense in the subsequent section [Connecting server and client](#connecting-server-and-client) )
 
 ```json
 "figma-desktop": {

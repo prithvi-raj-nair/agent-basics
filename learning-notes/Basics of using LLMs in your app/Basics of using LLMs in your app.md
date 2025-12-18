@@ -67,7 +67,7 @@ These APIs support tool calling. To do this, they have the following:
 
 You have to parse the response and actually perform the tool calling in your code. After you perform the tool call, you have to send the response back to the LLM as part of the message history with a specific type or field for the tool response. 
 
-More details on tool calling and structure i/o in [Tool calling](https://www.notion.so/Tool-calling-2c56fe198dfe8084bb9fea23ff698b08?pvs=21) page
+More details on tool calling and structure i/o in [Tool calling - Deep dive](../Tool%20calling%20-%20Deep%20dive/Tool%20calling%20-%20Deep%20dive.md) page
 
 ### Stateless and non-deterministic
 
