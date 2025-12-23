@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --llm-app-bg: #c8e6c9;
+  --llm-api-bg: #d1c4e9;
+  --print-hello-bg: #ffe0b2;
+  --activity-log-bg: #e0e0e0;
+  --mcp-server-bg: #ffcc80;
+  --mcp-client-bg: #a5d6a7;
+  --chat-ui-bg: #81c784;
+  --orchestration-bg: #aed581;
+  --built-in-tools-bg: #c5e1a5;
+  --hello-ui-bg: #ffb74d;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+/* Custom scrollbar for log areas */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
