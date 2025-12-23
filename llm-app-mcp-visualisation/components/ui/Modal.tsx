@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, ReactNode } from 'react'
+import { useEffect, useRef, ReactNode, RefObject } from 'react'
 import { Button } from './Button'
 
 interface ModalProps {
@@ -8,10 +8,13 @@ interface ModalProps {
   onClose: () => void
   title?: string
   children: ReactNode
+  scrollRef?: RefObject<HTMLDivElement>
 }
 
-export function Modal({ isOpen, onClose, title, children }: ModalProps) {
+export function Modal({ isOpen, onClose, title, children, scrollRef }: ModalProps) {
   const modalRef = useRef<HTMLDivElement>(null)
+  const internalScrollRef = useRef<HTMLDivElement>(null)
+  const actualScrollRef = scrollRef || internalScrollRef
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -46,7 +49,7 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
             <h2 className="text-lg font-semibold">{title}</h2>
           </div>
         )}
-        <div className="flex-1 overflow-auto p-6 custom-scrollbar">
+        <div ref={actualScrollRef} className="flex-1 overflow-auto p-6 custom-scrollbar">
           {children}
         </div>
         <div className="px-6 py-4 border-t border-purple-200 flex justify-end">

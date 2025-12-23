@@ -17,4 +17,6 @@ export interface MCPResource {
   type: 'tool' | 'resource' | 'prompt'
   name: string
   description: string
+  parameters?: string[] // Parameter names like ['name'] for prompts with {name} placeholders
+  template?: string // The prompt template with placeholders like "Find {name} in hellos"
 }

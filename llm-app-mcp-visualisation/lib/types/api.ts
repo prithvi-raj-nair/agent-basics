@@ -3,6 +3,7 @@ export interface APILogEntry {
   type: 'request' | 'response'
   timestamp: Date
   data: APIRequest | APIResponse
+  stepNumber?: number // Activity log step number
 }
 
 export interface APIRequest {

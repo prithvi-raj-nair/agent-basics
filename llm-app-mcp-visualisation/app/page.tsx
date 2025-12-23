@@ -13,7 +13,10 @@ export default function Home() {
 
   return (
     <main className="min-h-screen p-4">
-      <h1 className="text-sm text-gray-500 mb-2">LLM application visualization</h1>
+      <div className="flex items-center justify-between mb-4">
+        <h1 className="text-lg font-semibold text-slate-700">LLM Application Visualization</h1>
+        <span className="text-xs text-slate-400">Interactive demo of MCP and LLM integration</span>
+      </div>
       <VisualizationLayout />
     </main>
   )

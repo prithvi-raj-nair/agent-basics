@@ -25,31 +25,33 @@ export default function PrintHelloUI() {
   }
 
   return (
-    <div className="bg-[#ffb74d] rounded-lg p-3 h-full flex flex-col border border-orange-400">
-      <h3 className="text-sm font-semibold text-center mb-2">&quot;Print hello&quot; Application UI</h3>
+    <div className="bg-amber-50 rounded-lg p-3 h-full flex flex-col border border-amber-200 shadow-sm">
+      <h3 className="text-xs font-medium text-center mb-2 text-amber-700 uppercase tracking-wide">Application UI</h3>
 
       {/* Hellos display - scrollable */}
       <div
         ref={scrollRef}
-        className="flex-1 bg-white/50 rounded p-2 overflow-y-auto custom-scrollbar mb-2 min-h-0"
+        className="flex-1 bg-slate-100 border border-slate-200 rounded-lg p-2 overflow-y-auto custom-scrollbar mb-2 min-h-0"
         style={{ overflowY: 'auto' }}
       >
         {hellos.length === 0 ? (
-          <div className="text-gray-500 text-xs text-center">No hellos yet</div>
+          <div className="text-slate-400 text-xs text-center py-4">No hellos yet</div>
         ) : (
-          <div className="space-y-1">
+          <div className="space-y-1.5">
             {hellos.map((hello) => (
               <div
                 key={hello.id}
-                className={`text-xs px-2 py-1 rounded ${
+                className={`text-xs px-2.5 py-1.5 rounded-md flex items-center justify-between ${
                   hello.source === 'ui'
-                    ? 'bg-orange-200'
-                    : 'bg-purple-200'
+                    ? 'bg-amber-100 text-amber-800'
+                    : 'bg-violet-100 text-violet-800'
                 }`}
               >
-                Hello{hello.name ? ` ${hello.name}` : ''}
-                <span className="text-[9px] text-gray-500 ml-1">
-                  ({hello.source === 'ui' ? 'UI' : 'LLM'})
+                <span>Hello{hello.name ? ` ${hello.name}` : '!'}</span>
+                <span className={`text-[9px] px-1.5 py-0.5 rounded ${
+                  hello.source === 'ui' ? 'bg-amber-200' : 'bg-violet-200'
+                }`}>
+                  {hello.source === 'ui' ? 'UI' : 'LLM'}
                 </span>
               </div>
             ))}
@@ -63,12 +65,12 @@ export default function PrintHelloUI() {
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="(Optional) Type Name to say hello"
-          className="w-full text-xs px-2 py-1 rounded border border-orange-300 bg-white/80"
+          placeholder="Enter name (optional)"
+          className="w-full text-xs px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:outline-none focus:ring-2 focus:ring-amber-300 focus:border-transparent"
         />
         <button
           onClick={handlePrintHello}
-          className="w-full bg-orange-600 text-white text-xs py-1.5 rounded hover:bg-orange-700"
+          className="w-full bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs py-2 rounded-lg hover:from-amber-600 hover:to-orange-600 transition-all font-medium"
         >
           Print Hello
         </button>

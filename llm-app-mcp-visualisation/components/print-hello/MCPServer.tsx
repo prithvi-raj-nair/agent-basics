@@ -10,39 +10,42 @@ export default function MCPServer() {
 
   return (
     <>
-      <div className="bg-[#ffcc80] rounded-lg p-3 border border-orange-400">
-        <h3 className="text-sm font-semibold text-center mb-2">&quot;Print hello&quot; MCP Server</h3>
+      <div className="bg-amber-50 rounded-lg p-3 border border-amber-200 shadow-sm">
+        <h3 className="text-xs font-medium text-center mb-1 text-amber-700 uppercase tracking-wide">MCP Server</h3>
+        <p className="text-[11px] text-slate-500 text-center mb-2 leading-relaxed">
+          Exposes tools, resources, and prompts via the MCP protocol for the LLM app to use.
+        </p>
 
-        <div className="grid grid-cols-3 gap-2 text-[10px] mb-2">
+        <div className="grid grid-cols-3 gap-2 text-[10px] mb-3">
           {/* Tools */}
-          <div>
-            <div className="font-semibold mb-1">Tools</div>
-            <ul className="text-gray-600 space-y-0.5">
-              <li>• Print hello (name)</li>
-              <li>• Get last (N) hello</li>
+          <div className="bg-amber-100/70 rounded-md p-2 border border-amber-200">
+            <div className="font-semibold mb-1 text-amber-700">Tools</div>
+            <ul className="text-slate-600 space-y-0.5">
+              <li>• print_hello</li>
+              <li>• get_last_hellos</li>
             </ul>
           </div>
 
           {/* Resources */}
-          <div>
-            <div className="font-semibold mb-1">Resources</div>
-            <ul className="text-gray-600 space-y-0.5">
-              <li>• Number of hellos</li>
+          <div className="bg-amber-100/70 rounded-md p-2 border border-amber-200">
+            <div className="font-semibold mb-1 text-amber-700">Resources</div>
+            <ul className="text-slate-600 space-y-0.5">
+              <li>• hello_count</li>
             </ul>
           </div>
 
           {/* Prompt */}
-          <div>
-            <div className="font-semibold mb-1">Prompt</div>
-            <ul className="text-gray-600 space-y-0.5">
-              <li>• Find all names</li>
+          <div className="bg-amber-100/70 rounded-md p-2 border border-amber-200">
+            <div className="font-semibold mb-1 text-amber-700">Prompts</div>
+            <ul className="text-slate-600 space-y-0.5">
+              <li>• find_name</li>
             </ul>
           </div>
         </div>
 
         <button
           onClick={() => setShowActivity(true)}
-          className="w-full bg-purple-500 text-white text-xs py-1 rounded hover:bg-purple-600"
+          className="w-full bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs py-1.5 rounded-md hover:from-amber-600 hover:to-orange-600 transition-all font-medium"
         >
           View activity
         </button>

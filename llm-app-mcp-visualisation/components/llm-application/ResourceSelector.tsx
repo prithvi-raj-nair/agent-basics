@@ -2,6 +2,7 @@
 
 import { useChatStore } from '@/lib/store/chatStore'
 import { MCPResource } from '@/lib/types'
+import { useEffect, useRef } from 'react'
 
 interface ResourceSelectorProps {
   onClose: () => void
@@ -15,12 +16,30 @@ const availableResources: MCPResource[] = [
   // Resources
   { type: 'resource', name: 'hello_count', description: 'Number of hellos in session' },
   // Prompts
-  { type: 'prompt', name: 'find_name_in_hellos', description: 'Find a name in all hellos' },
+  {
+    type: 'prompt',
+    name: 'find_name_in_hellos',
+    description: 'Find a name in all hellos',
+    parameters: ['name'],
+    template: 'First, get the hello_count from the resource to know how many hellos exist. Then use get_last_hellos with that count to fetch all hellos. Finally, search through them to find any that mention "{name}".'
+  },
 ]
 
 export default function ResourceSelector({ onClose }: ResourceSelectorProps) {
   const addSelectedResource = useChatStore((state) => state.addSelectedResource)
   const selectedResources = useChatStore((state) => state.selectedResources)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        onClose()
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [onClose])
 
   const handleSelect = (resource: MCPResource) => {
     if (!selectedResources.find((r) => r.name === resource.name)) {
@@ -34,7 +53,7 @@ export default function ResourceSelector({ onClose }: ResourceSelectorProps) {
   const prompts = availableResources.filter((r) => r.type === 'prompt')
 
   return (
-    <div className="absolute bottom-full left-0 right-0 mb-1 bg-white rounded-lg shadow-lg border border-gray-300 z-10">
+    <div ref={dropdownRef} className="absolute bottom-full left-0 right-0 mb-1 bg-white rounded-lg shadow-lg border border-gray-300 z-10">
       <div className="p-2 max-h-48 overflow-auto custom-scrollbar">
         {/* Tools */}
         <div className="mb-2">
