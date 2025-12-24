@@ -24,7 +24,7 @@ These are simple projects I built as part of my learning. Some are taken from ot
 
 | Project | Description |
 |---------|-------------|
-| [LLM App + MCP interactive Visualiser](./llm-app-mcp-visualisation/) | Interactive visualisation of how LLM apps work with MCP integration |
+| [LLM App + MCP interactive Visualiser](./llm-app-mcp-visualisation/README.md) | Interactive visualisation of how LLM apps work with MCP integration |
 | [anthropic-agent-cookbook](./anthropic-agent-cookbook/) | Anthropic's agent patterns and examples |
 | [andrew-ng-agentic-ai](./andrew-ng-agentic-ai/) | Andrew Ng's Agentic AI course material |
 
