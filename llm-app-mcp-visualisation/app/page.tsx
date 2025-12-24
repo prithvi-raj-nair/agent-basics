@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react'
 import VisualizationLayout from '@/components/layout/VisualizationLayout'
+import { Header } from '@/components/layout/Header'
 import { useActivityLogStore } from '@/lib/store/activityLogStore'
 
 export default function Home() {
@@ -12,12 +13,11 @@ export default function Home() {
   }, [initializeEntries])
 
   return (
-    <main className="min-h-screen p-4">
-      <div className="flex items-center justify-between mb-4">
-        <h1 className="text-lg font-semibold text-slate-700">LLM Application Visualization</h1>
-        <span className="text-xs text-slate-400">Interactive demo of MCP and LLM integration</span>
-      </div>
-      <VisualizationLayout />
-    </main>
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-1 p-4">
+        <VisualizationLayout />
+      </main>
+    </div>
   )
 }

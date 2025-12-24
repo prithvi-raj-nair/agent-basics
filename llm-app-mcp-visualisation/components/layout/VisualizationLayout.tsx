@@ -7,7 +7,7 @@ import SystemActivityLog from '@/components/activity-log/SystemActivityLog'
 
 export default function VisualizationLayout() {
   return (
-    <div className="flex gap-4 h-[calc(100vh-80px)]">
+    <div className="flex gap-4 h-[calc(100vh-120px)]">
       {/* LLM Application - Left Section (largest) */}
       <div className="flex-[2] min-w-[420px]">
         <LLMApplication />
